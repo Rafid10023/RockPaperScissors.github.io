@@ -1,0 +1,90 @@
+body{
+    background-color: #99CCFF;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+header{
+    font-size: 100px;
+}
+.TitleBox{
+    background-color: aquamarine;
+    height: 150px;
+    width: 1600px;
+    border-radius: 10px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+}
+.MainBox{
+    margin: 10px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    height: 600px;
+    width: 1600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    
+}
+.score{
+    background-color: aquamarine;
+    width: 1600px;
+    height: 150px;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: row;
+    align-items: center; /* Center vertically */
+    justify-content: center; 
+    padding-left: 100px;
+    border-radius: 10px;
+    gap: 100px;
+    font-size: 50px;
+}
+.box1{
+    margin: 80px;
+    height: 400px;
+    width: 300px;
+    border: 8px solid #000;
+    border-color: black;
+    background-image: url('rock.png');
+    font-size: 70px;
+    color: red;
+}
+.box2{
+    margin: 80px;
+    height: 400px;
+    width: 300px;
+    border: 8px solid #000;
+    border-color: black;
+    background-image: url('paper.png');
+    font-size: 70px;
+    color: red;
+}
+.box3{
+    margin: 80px;
+    height: 400px;
+    width: 300px;
+    border: 8px solid #000;
+    border-color: black;
+    background-image: url('scissors.png');
+    font-size: 70px;
+    color: red;
+}
+.box{
+    margin: 80px;
+    height: 400px;
+    width: 300px;
+    border: 8px solid #000;
+    border-color: black;
+    font-size: 70px;
+    color: red;
+    
+}
+
