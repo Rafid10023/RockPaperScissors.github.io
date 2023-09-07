@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Style.css" rel="stylesheet"/>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <div class="container">
+        <header class="TitleBox">Rock Paper Scissors</header>
+
+
+
+        <div class="MainBox">
+            <button id="rock" class="box1">rock</button>
+            <button id="paper" class="box2">paper</button>
+            <button id="scissors" class="box3">scissors</button>
+            <button id="nextRound" class="box">next round</button>
+        </div>
+
+        <div class="score">
+            <p>Score Out Of 5:  </p>
+            <p id="result">0 </p>
+            <p>They played </p>
+            <p id="Player">1</p>
+
+        </div>
+    </div>
+        
+
+    <script>
+        
+        document.getElementById("rock").addEventListener("click", pickedRock);
+        document.getElementById("paper").addEventListener("click", pickedPaper);
+        document.getElementById("scissors").addEventListener("click", pickedScissors);
+        document.getElementById("nextRound").addEventListener("click", nextRound);
+
+
+        let answer=getRandomInt(3);
+        let gamesPlayed = 0;
+        // document.getElementById("rock").style.borderColor = "green";
+        let Score = 0;
+        let picked = "1"
+
+        const button1 =  document.getElementById("rock");
+        const button2 =  document.getElementById("paper");
+        const button3 =  document.getElementById("scissors");
+        
+        function nextRound(){startButton();}
+
+   
+        function pickedRock() {
+            gamesPlayed=gamesPlayed+1;
+            endButton();
+            if(answer!=0){
+                Score=Score;
+                document.getElementById("rock").style.borderColor = "orange";
+                if(answer==1){document.getElementById("paper").style.borderColor = "green";}
+                if(answer==2){document.getElementById("scissors").style.borderColor = "green";}
+            }
+            else{ Score=Score+1;
+                document.getElementById("rock").style.borderColor = "green";}
+            GameEnd();
+            document.getElementById("result").innerHTML = Score;
+            if (answer==0){
+                picked = "rock";
+            }
+            if (answer==1){
+                picked = "paper";
+            }
+            if (answer==2){
+                let picked = "scissors";
+            }
+            document.getElementById("Player").innerHTML = picked;
+            answer=getRandomInt(3);
+        }
+
+        function pickedPaper(){
+            gamesPlayed=gamesPlayed+1;
+            endButton();
+            if(answer!=1){
+                Score=Score;
+                document.getElementById("paper").style.borderColor = "orange";
+                if(answer==0){document.getElementById("rock").style.borderColor = "green";}
+                if(answer==2){document.getElementById("scissors").style.borderColor = "green";}
+            }
+            else{ Score=Score+1;
+                document.getElementById("paper").style.borderColor = "green";}
+            GameEnd();
+            document.getElementById("result").innerHTML = Score;
+            if (answer==0){
+                picked = "rock";
+            }
+            if (answer==1){
+                picked = "paper";
+            }
+            if (answer==2){
+                let picked = "scissors";
+            }
+            document.getElementById("Player").innerHTML = picked;
+            answer=getRandomInt(3);
+        }
+
+        function pickedScissors(){
+            gamesPlayed=gamesPlayed+1;
+            endButton();
+            if(answer!=2){
+                Score=Score;
+                document.getElementById("scissors").style.borderColor = "orange";
+                if(answer==1){document.getElementById("paper").style.borderColor = "green";}
+                if(answer==0){document.getElementById("rock").style.borderColor = "green";}
+            }
+            else{ Score=Score+1;
+                document.getElementById("scissors").style.borderColor = "green";}
+            GameEnd();
+            document.getElementById("result").innerHTML = Score;
+            if (answer==0){
+                picked = "rock";
+            }
+            if (answer==1){
+                picked = "paper";
+            }
+            if (answer==2){
+                let picked = "scissors";
+            }
+            document.getElementById("Player").innerHTML = picked;
+            answer=getRandomInt(3);
+        }
+
+        function GameEnd(){
+            
+                endButton();
+            
+        }
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function endButton(){
+            button1.disabled=true;
+            button2.disabled=true;
+            button3.disabled=true;
+        }
+        function startButton(){
+            document.getElementById("rock").style.borderColor = "black";
+            document.getElementById("paper").style.borderColor = "black";
+            document.getElementById("scissors").style.borderColor = "black";
+            if (gamesPlayed<5){
+                button1.disabled=false;
+                button2.disabled=false;
+                button3.disabled=false;
+            }
+            else{
+                button1.disabled=true;
+                button2.disabled=true;
+                button3.disabled=true;
+                document.getElementById("nextRound").innerHTML = "Cant Play anymore";
+
+            }
+        }
+
+        </script>
+</body>
+</html>
